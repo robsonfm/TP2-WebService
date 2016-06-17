@@ -1,51 +1,67 @@
 package org.engsoft.webservice;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 
 
 @WebService(endpointInterface="org.engsoft.webservice.ILivraria")
-public class Livraria implements ILivraria{
-	private ArrayList<Livro> Livros;
-	
-	@WebMethod public void fazLivros(){
-		Livros = new ArrayList<Livro>();
-		int a = 1;
-		String b = "Vendaval";
-		String c = "Joao";
-		String d = "Publique";
-		int e = 2014;
-		Livro insere = new Livro(a,b,c,d,e);
-		Livros.add(insere);
-		a = 2;
-		b = "Ventania";
-		c = "Joaquim";
-		d = "Publique";
-		e = 2015;
-		insere = new Livro(a,b,c,d,e);
-		Livros.add(insere);
-		a = 3;
-		b = "Furacao";
-		c = "Joana";
-		d = "Publique";
-		e = 2016;
-		insere = new Livro(a,b,c,d,e);
-		Livros.add(insere);
-	}
-	
-	@WebMethod public Livro pesquisa(int isbn){
-		for(Livro novo : this.Livros){
-			if (novo.getIsbn() == isbn)
-				return novo;
+public class Livraria implements ILivraria {
+
+	@WebMethod (operationName = "pesquisa")
+	public Livro pesquisa(int isbn) {
+		
+		for(Livro livro : listaLivros) {
+			if (livro.getIsbn() == isbn)
+				return livro;
 		}
+		
 		return null;
 	}
-	@WebMethod public Livro pesquisa1(String autor){
-		for(Livro novo : this.Livros){
-			if (novo.getAutor().equals(autor))
-				return novo;
+	
+	@WebMethod (operationName = "pesquisaAutor")
+	public Livro pesquisa(String autor) {
+		
+		for(Livro livro : listaLivros) {
+			if (livro.getAutor().equals(autor))
+				return livro;
 		}
+		
 		return null;
+	}
+	
+	private ArrayList<Livro> livrosServ() {
+		Scanner scanner = null;
+		ArrayList<Livro> listaLivros = new ArrayList<Livro>();
+		
+		int isbn, ano;
+		String nome, autor, editora, isbnCode;
+		
+		try {
+			scanner = new Scanner(new FileReader("Livros.txt")).useDelimiter(";|\n");
+			
+			scanner.nextLine(); // ignora linha de cabe�alhos
+			
+			while (scanner.hasNext()) {
+				isbn = scanner.nextInt();
+				nome = scanner.next();
+				autor = scanner.next();
+				editora = scanner.next();
+				ano = scanner.nextInt();
+				isbnCode = scanner.next();
+
+				listaLivros.add(new Livro(isbn, nome, autor, editora, ano, isbnCode));
+			}
+			
+			scanner.close();
+			
+			return listaLivros;
+		} catch (IOException e) {
+			// retorna lista nula
+			return null;
+		}
 	}
 }

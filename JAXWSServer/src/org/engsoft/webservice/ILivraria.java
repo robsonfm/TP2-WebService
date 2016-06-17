@@ -4,9 +4,11 @@ import javax.jws.WebService;
   
 @WebService
 public interface ILivraria {
-	
-	@WebMethod public void fazLivros();
-	@WebMethod public Livro pesquisa(int isbn);
-	@WebMethod public Livro pesquisa1(String autor);
 
+	@WebMethod (operationName = "pesquisa")
+	public Livro pesquisa(int isbn);
+	
+	@WebMethod (operationName = "pesquisaAutor")
+	public Livro pesquisa(String autor);
+	
 }

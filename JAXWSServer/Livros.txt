@@ -1,0 +1,4 @@
+isbn;nome;autor;editora;ano;isbn_code
+1;O menino do pijama listrado;John Boyne;Boa Viagem Distribuidora de Livros LTDA;2009;978-85-98078-17-5
+2;O menino do dedo verde;Druon Maurice;Jose Olympio;1993;978-85-98078-17-5
+4;Dom Casmurro;Machado de Assis;Ediouro;1900;978-85-98078-17-5
