@@ -41,26 +41,17 @@ public interface ILivraria {
 
     /**
      * 
-     */
-    @WebMethod
-    @RequestWrapper(localName = "fazLivros", targetNamespace = "http://webservice.engsoft.org/", className = "org.engsoft.webservice.FazLivros")
-    @ResponseWrapper(localName = "fazLivrosResponse", targetNamespace = "http://webservice.engsoft.org/", className = "org.engsoft.webservice.FazLivrosResponse")
-    @Action(input = "http://webservice.engsoft.org/ILivraria/fazLivrosRequest", output = "http://webservice.engsoft.org/ILivraria/fazLivrosResponse")
-    public void fazLivros();
-
-    /**
-     * 
      * @param arg0
      * @return
      *     returns org.engsoft.webservice.Livro
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "pesquisa1", targetNamespace = "http://webservice.engsoft.org/", className = "org.engsoft.webservice.Pesquisa1")
-    @ResponseWrapper(localName = "pesquisa1Response", targetNamespace = "http://webservice.engsoft.org/", className = "org.engsoft.webservice.Pesquisa1Response")
-    @Action(input = "http://webservice.engsoft.org/ILivraria/pesquisa1Request", output = "http://webservice.engsoft.org/ILivraria/pesquisa1Response")
-    public Livro pesquisa1(
+    @RequestWrapper(localName = "pesquisaAutor", targetNamespace = "http://webservice.engsoft.org/", className = "org.engsoft.webservice.Pesquisa")
+    @ResponseWrapper(localName = "pesquisaAutorResponse", targetNamespace = "http://webservice.engsoft.org/", className = "org.engsoft.webservice.PesquisaResponse")
+    @Action(input = "http://webservice.engsoft.org/ILivraria/pesquisaAutorRequest", output = "http://webservice.engsoft.org/ILivraria/pesquisaAutorResponse")
+    public Livro pesquisaAutor(
         @WebParam(name = "arg0", targetNamespace = "")
-        String arg0);
+        int arg0);
 
 }

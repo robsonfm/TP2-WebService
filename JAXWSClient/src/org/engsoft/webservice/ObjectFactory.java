@@ -25,11 +25,9 @@ import javax.xml.namespace.QName;
 public class ObjectFactory {
 
     private final static QName _PesquisaResponse_QNAME = new QName("http://webservice.engsoft.org/", "pesquisaResponse");
-    private final static QName _Pesquisa1Response_QNAME = new QName("http://webservice.engsoft.org/", "pesquisa1Response");
     private final static QName _Pesquisa_QNAME = new QName("http://webservice.engsoft.org/", "pesquisa");
-    private final static QName _FazLivros_QNAME = new QName("http://webservice.engsoft.org/", "fazLivros");
-    private final static QName _FazLivrosResponse_QNAME = new QName("http://webservice.engsoft.org/", "fazLivrosResponse");
-    private final static QName _Pesquisa1_QNAME = new QName("http://webservice.engsoft.org/", "pesquisa1");
+    private final static QName _PesquisaAutorResponse_QNAME = new QName("http://webservice.engsoft.org/", "pesquisaAutorResponse");
+    private final static QName _PesquisaAutor_QNAME = new QName("http://webservice.engsoft.org/", "pesquisaAutor");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: org.engsoft.webservice
@@ -39,43 +37,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link FazLivrosResponse }
-     * 
-     */
-    public FazLivrosResponse createFazLivrosResponse() {
-        return new FazLivrosResponse();
-    }
-
-    /**
-     * Create an instance of {@link Pesquisa1 }
-     * 
-     */
-    public Pesquisa1 createPesquisa1() {
-        return new Pesquisa1();
-    }
-
-    /**
-     * Create an instance of {@link Pesquisa1Response }
-     * 
-     */
-    public Pesquisa1Response createPesquisa1Response() {
-        return new Pesquisa1Response();
-    }
-
-    /**
      * Create an instance of {@link PesquisaResponse }
      * 
      */
     public PesquisaResponse createPesquisaResponse() {
         return new PesquisaResponse();
-    }
-
-    /**
-     * Create an instance of {@link FazLivros }
-     * 
-     */
-    public FazLivros createFazLivros() {
-        return new FazLivros();
     }
 
     /**
@@ -104,15 +70,6 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Pesquisa1Response }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://webservice.engsoft.org/", name = "pesquisa1Response")
-    public JAXBElement<Pesquisa1Response> createPesquisa1Response(Pesquisa1Response value) {
-        return new JAXBElement<Pesquisa1Response>(_Pesquisa1Response_QNAME, Pesquisa1Response.class, null, value);
-    }
-
-    /**
      * Create an instance of {@link JAXBElement }{@code <}{@link Pesquisa }{@code >}}
      * 
      */
@@ -122,30 +79,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link FazLivros }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link PesquisaResponse }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://webservice.engsoft.org/", name = "fazLivros")
-    public JAXBElement<FazLivros> createFazLivros(FazLivros value) {
-        return new JAXBElement<FazLivros>(_FazLivros_QNAME, FazLivros.class, null, value);
+    @XmlElementDecl(namespace = "http://webservice.engsoft.org/", name = "pesquisaAutorResponse")
+    public JAXBElement<PesquisaResponse> createPesquisaAutorResponse(PesquisaResponse value) {
+        return new JAXBElement<PesquisaResponse>(_PesquisaAutorResponse_QNAME, PesquisaResponse.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link FazLivrosResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link Pesquisa }{@code >}}
      * 
      */
-    @XmlElementDecl(namespace = "http://webservice.engsoft.org/", name = "fazLivrosResponse")
-    public JAXBElement<FazLivrosResponse> createFazLivrosResponse(FazLivrosResponse value) {
-        return new JAXBElement<FazLivrosResponse>(_FazLivrosResponse_QNAME, FazLivrosResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Pesquisa1 }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://webservice.engsoft.org/", name = "pesquisa1")
-    public JAXBElement<Pesquisa1> createPesquisa1(Pesquisa1 value) {
-        return new JAXBElement<Pesquisa1>(_Pesquisa1_QNAME, Pesquisa1 .class, null, value);
+    @XmlElementDecl(namespace = "http://webservice.engsoft.org/", name = "pesquisaAutor")
+    public JAXBElement<Pesquisa> createPesquisaAutor(Pesquisa value) {
+        return new JAXBElement<Pesquisa>(_PesquisaAutor_QNAME, Pesquisa.class, null, value);
     }
 
 }
