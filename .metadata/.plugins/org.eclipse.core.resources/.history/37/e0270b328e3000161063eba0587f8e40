@@ -1,0 +1,60 @@
+package org.engsoft.webservice;
+import java.util.ArrayList;
+
+import javax.jws.WebMethod;
+import javax.jws.WebService;  
+import javax.xml.ws.RequestWrapper;
+import javax.xml.ws.ResponseWrapper;
+
+
+@WebService(endpointInterface="org.engsoft.webservice.ILivraria")
+public class Livraria implements ILivraria{
+	private ArrayList<Livro> Livros;
+	
+	void fazLivros(){
+		Livros = new ArrayList<Livro>();
+		int a = 1;
+		String b = "Vendaval";
+		String c = "Joao";
+		String d = "Publique";
+		int e = 2014;
+		Livro insere = new Livro(a,b,c,d,e);
+		Livros.add(insere);
+		a = 2;
+		b = "Ventania";
+		c = "Joaquim";
+		d = "Publique";
+		e = 2015;
+		insere = new Livro(a,b,c,d,e);
+		Livros.add(insere);
+		a = 3;
+		b = "Furacao";
+		c = "Joana";
+		d = "Publique";
+		e = 2016;
+		insere = new Livro(a,b,c,d,e);
+		Livros.add(insere);
+	}
+	
+	@WebMethod(operationName = "pesquisa")
+	
+	public Livro pesquisa(int isbn){
+		fazLivros();
+		for(Livro novo : this.Livros){
+			if (novo.getIsbn() == isbn)
+				return novo;
+		}
+		return null;
+	}
+	@WebMethod(operationName = "pesquisa_1")
+	@RequestWrapper(className = "org.engesoft.pesquisa_1")
+    @ResponseWrapper(className = "org.engsoft.pesquisa_1Response")
+	public Livro pesquisa(String autor){
+		fazLivros();
+		for(Livro novo : this.Livros){
+			if (novo.getAutor().equals(autor))
+				return novo;
+		}
+		return null;
+	}
+}

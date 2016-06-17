@@ -1,0 +1,10 @@
+package org.arpit.webservice;
+import javax.jws.WebService;  
+
+
+@WebService(endpointInterface="org.arpit.webservice.ILivraria")
+public class Livraria implements ILivraria{
+	public String helloWorld(String name) {  
+		  return "Hello world from "+name;  
+		 }
+}

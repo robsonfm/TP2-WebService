@@ -1,0 +1,18 @@
+package org.engsoft.webservice;
+import javax.jws.WebMethod;
+import javax.jws.WebService;  
+
+
+@WebService(endpointInterface="org.engsoft.webservice.ILivraria")
+public class Livraria implements ILivraria{
+	@WebMethod public Livro pesquisa(int isbn){
+		
+		
+		Livro novo = new Livro ();
+		return novo;
+	}
+	@WebMethod public Livro pesquisa1(String autor){
+		Livro novo = new Livro ();
+		return novo;
+	}
+}

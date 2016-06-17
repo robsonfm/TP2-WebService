@@ -1,0 +1,11 @@
+package org.arpit.webservice;
+import javax.jws.WebMethod;  
+import javax.jws.WebService;  
+  
+@WebService
+public interface ILivraria {
+	
+	@WebMethod public String pesquisa(int isbn);
+	@WebMethod public String pesquisa1(String autor);
+
+}

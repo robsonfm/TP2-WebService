@@ -1,0 +1,13 @@
+package org.arpit.webservice.client;  
+import org.arpit.webservice.ILivraria;  
+import org.arpit.webservice.LivrariaService;  
+  
+public class JAXWSClient {  
+   
+    public static void main(String[] args) {  
+          
+        LivrariaService LService = new LivrariaService();  
+        ILivraria IL = LivrariaService.getLivrariaPort();  
+        System.out.println(IL.pesquisa(1234));  
+    }  
+}

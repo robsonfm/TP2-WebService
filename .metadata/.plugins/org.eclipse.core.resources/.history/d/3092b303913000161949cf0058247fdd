@@ -1,0 +1,25 @@
+package org.engsoft.webservice.client;  
+import org.engsoft.webservice.ILivraria;
+import org.engsoft.webservice.LivrariaService;
+import org.engsoft.webservice.Livro;
+  
+public class JAXWSClient {  
+   
+    public static void main(String[] args) {  
+          
+        LivrariaService LService = new LivrariaService();  
+        ILivraria IL = LService.getLivrariaPort();
+        IL.fazLivros();
+        Livro novo;
+        novo = IL.pesquisa(1);
+        String imprimir ="Livro\nisbn = "+novo.getIsbn()+"\nNome = "+novo.getNome()+
+        		"\nAutor = "+novo.getAutor()+"\nEditora = "+novo.getEditora()+
+        		"\nAno = "+novo.getAno();
+        System.out.println(imprimir);
+        novo = IL.pesquisa1("Joana");
+        imprimir ="Livro\nisbn = "+novo.getIsbn()+"\nNome = "+novo.getNome()+
+        		"\nAutor = "+novo.getAutor()+"\nEditora = "+novo.getEditora()+
+        		"\nAno = "+novo.getAno();
+        System.out.println(imprimir);  
+    }  
+}

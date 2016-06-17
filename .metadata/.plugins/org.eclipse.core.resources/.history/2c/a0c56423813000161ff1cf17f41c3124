@@ -1,0 +1,5 @@
+package org.arpit.webservice.client;
+
+public class JAXWSClient {
+
+}
