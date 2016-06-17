@@ -13,6 +13,7 @@ public class Livraria implements ILivraria {
 
 	@WebMethod (operationName = "pesquisa")
 	public Livro pesquisa(int isbn) {
+		ArrayList<Livro> listaLivros = this.livrosServ();
 		
 		for(Livro livro : listaLivros) {
 			if (livro.getIsbn() == isbn)
@@ -24,6 +25,7 @@ public class Livraria implements ILivraria {
 	
 	@WebMethod (operationName = "pesquisaAutor")
 	public Livro pesquisa(String autor) {
+		ArrayList<Livro> listaLivros = this.livrosServ();
 		
 		for(Livro livro : listaLivros) {
 			if (livro.getAutor().equals(autor))
@@ -43,7 +45,7 @@ public class Livraria implements ILivraria {
 		try {
 			scanner = new Scanner(new FileReader("Livros.txt")).useDelimiter(";|\n");
 			
-			scanner.nextLine(); // ignora linha de cabe�alhos
+			scanner.nextLine(); // ignora linha de cabecalhos
 			
 			while (scanner.hasNext()) {
 				isbn = scanner.nextInt();
