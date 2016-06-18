@@ -1,8 +1,6 @@
 package org.engsoft.webservice;
-import java.io.FileReader;
-import java.io.IOException;
+
 import java.util.ArrayList;
-import java.util.Scanner;
 
 import javax.jws.WebMethod;
 import javax.jws.WebService;
@@ -36,34 +34,14 @@ public class Livraria implements ILivraria {
 	}
 	
 	private ArrayList<Livro> livrosServ() {
-		Scanner scanner = null;
 		ArrayList<Livro> listaLivros = new ArrayList<Livro>();
 		
-		int isbn, ano;
-		String nome, autor, editora, isbnCode;
+		listaLivros.add(new Livro(1, "O menino do pijama listrado", "John Boyne", "Boa Viagem Distribuidora de Livros LTDA", 2009, "978-85-98078-17-5"));
+		listaLivros.add(new Livro(2, "O menino do dedo verde", "Druon Maurice", "Jose Olympio", 1993, "978-85-98078-17-5"));
+		listaLivros.add(new Livro(3, "Morte e Vida Severina", "Joao Cabral de Melo Neto", "Editora Record", 1996, "978-85-98078-17-5"));
+		listaLivros.add(new Livro(4, "Dom Casmurro", "Machado de Assis", "Ediouro", 1900, "978-85-98078-17-5"));
+		listaLivros.add(new Livro(5, "A menina que roubava livros", "Markus Zusak", "Editora Intrinseca", 2007, "978-85-98078-17-5"));
 		
-		try {
-			scanner = new Scanner(new FileReader("Livros.txt")).useDelimiter(";|\n");
-			
-			scanner.nextLine(); // ignora linha de cabecalhos
-			
-			while (scanner.hasNext()) {
-				isbn = scanner.nextInt();
-				nome = scanner.next();
-				autor = scanner.next();
-				editora = scanner.next();
-				ano = scanner.nextInt();
-				isbnCode = scanner.next();
-
-				listaLivros.add(new Livro(isbn, nome, autor, editora, ano, isbnCode));
-			}
-			
-			scanner.close();
-			
-			return listaLivros;
-		} catch (IOException e) {
-			// retorna lista nula
-			return null;
-		}
+		return listaLivros;
 	}
 }
