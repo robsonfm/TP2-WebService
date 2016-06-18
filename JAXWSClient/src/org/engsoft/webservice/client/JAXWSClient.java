@@ -11,7 +11,7 @@ public class JAXWSClient {
           
         LivrariaService LService = new LivrariaService();  
         ILivraria IL = LService.getLivrariaPort();
-        IL.fazLivros();
+        //IL.fazLivros();
         Livro novo;
         Scanner leitura = new Scanner(System.in);
         int num = 1;
@@ -27,7 +27,7 @@ public class JAXWSClient {
         		}
         	}catch(Exception e){
         		String nome = leitura.nextLine();
-        		novo = IL.pesquisa1(nome);
+        		novo = IL.pesquisaAutor(nome);
                 String imprimir ="Livro\nisbn = "+novo.getIsbn()+"\nNome = "+novo.getNome()+
                 		"\nAutor = "+novo.getAutor()+"\nEditora = "+novo.getEditora()+
                 		"\nAno = "+novo.getAno();
