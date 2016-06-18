@@ -1,9 +1,10 @@
 package org.engsoft.webservice;
-
 import java.util.ArrayList;
 
 import javax.jws.WebMethod;
 import javax.jws.WebService;
+import javax.xml.ws.RequestWrapper;
+import javax.xml.ws.ResponseWrapper;
 
 
 @WebService(endpointInterface="org.engsoft.webservice.ILivraria")
@@ -22,7 +23,9 @@ public class Livraria implements ILivraria {
 	}
 	
 	@WebMethod (operationName = "pesquisaAutor")
-	public Livro pesquisa(String autor) {
+	@RequestWrapper(className = "pesquisaAutor")
+    @ResponseWrapper(className = "pesquisaAutorResponse")
+	public Livro pesquisa( String autor) {
 		ArrayList<Livro> listaLivros = this.livrosServ();
 		
 		for(Livro livro : listaLivros) {

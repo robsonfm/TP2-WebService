@@ -37,6 +37,22 @@ public class ObjectFactory {
     }
 
     /**
+     * Create an instance of {@link PesquisaAutorResponse }
+     * 
+     */
+    public PesquisaAutorResponse createPesquisaAutorResponse() {
+        return new PesquisaAutorResponse();
+    }
+
+    /**
+     * Create an instance of {@link PesquisaAutor }
+     * 
+     */
+    public PesquisaAutor createPesquisaAutor() {
+        return new PesquisaAutor();
+    }
+
+    /**
      * Create an instance of {@link PesquisaResponse }
      * 
      */
@@ -79,21 +95,21 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link PesquisaResponse }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link PesquisaAutorResponse }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://webservice.engsoft.org/", name = "pesquisaAutorResponse")
-    public JAXBElement<PesquisaResponse> createPesquisaAutorResponse(PesquisaResponse value) {
-        return new JAXBElement<PesquisaResponse>(_PesquisaAutorResponse_QNAME, PesquisaResponse.class, null, value);
+    public JAXBElement<PesquisaAutorResponse> createPesquisaAutorResponse(PesquisaAutorResponse value) {
+        return new JAXBElement<PesquisaAutorResponse>(_PesquisaAutorResponse_QNAME, PesquisaAutorResponse.class, null, value);
     }
 
     /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link Pesquisa }{@code >}}
+     * Create an instance of {@link JAXBElement }{@code <}{@link PesquisaAutor }{@code >}}
      * 
      */
     @XmlElementDecl(namespace = "http://webservice.engsoft.org/", name = "pesquisaAutor")
-    public JAXBElement<Pesquisa> createPesquisaAutor(Pesquisa value) {
-        return new JAXBElement<Pesquisa>(_PesquisaAutor_QNAME, Pesquisa.class, null, value);
+    public JAXBElement<PesquisaAutor> createPesquisaAutor(PesquisaAutor value) {
+        return new JAXBElement<PesquisaAutor>(_PesquisaAutor_QNAME, PesquisaAutor.class, null, value);
     }
 
 }

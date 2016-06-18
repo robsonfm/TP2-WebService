@@ -47,11 +47,11 @@ public interface ILivraria {
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "pesquisaAutor", targetNamespace = "http://webservice.engsoft.org/", className = "org.engsoft.webservice.Pesquisa")
-    @ResponseWrapper(localName = "pesquisaAutorResponse", targetNamespace = "http://webservice.engsoft.org/", className = "org.engsoft.webservice.PesquisaResponse")
+    @RequestWrapper(localName = "pesquisaAutor", targetNamespace = "http://webservice.engsoft.org/", className = "org.engsoft.webservice.PesquisaAutor")
+    @ResponseWrapper(localName = "pesquisaAutorResponse", targetNamespace = "http://webservice.engsoft.org/", className = "org.engsoft.webservice.PesquisaAutorResponse")
     @Action(input = "http://webservice.engsoft.org/ILivraria/pesquisaAutorRequest", output = "http://webservice.engsoft.org/ILivraria/pesquisaAutorResponse")
     public Livro pesquisaAutor(
         @WebParam(name = "arg0", targetNamespace = "")
-        int arg0);
+        String arg0);
 
 }

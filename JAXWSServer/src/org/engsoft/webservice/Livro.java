@@ -1,5 +1,6 @@
 package org.engsoft.webservice;
 
+
 public class Livro {
 	
 	private int isbn;
@@ -64,6 +65,13 @@ public class Livro {
 
 	public void setIsbnCode(String isbnCode) {
 		this.isbnCode = isbnCode;
+	}
+	
+	@Override
+	public String toString() {
+		return "Livro\nisbn = "+this.isbn+"\nNome = "+this.nome+
+        		"\nAutor = "+this.autor+"\nEditora = "+this.editora+
+        		"\nAno = "+this.ano;
 	}
 
 	
