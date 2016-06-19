@@ -1,0 +1,54 @@
+package org.engsoft.webservice;
+
+import javax.jws.WebMethod;
+import javax.jws.WebService;
+
+@WebService(endpointInterface="org.engsoft.webservice.ILivraria")
+public class Livro {
+	
+	private int isbn;
+	private String nome;
+	private String autor;
+	private String editora;
+	private int ano;
+	private String isbnCode;
+	
+	public Livro(int isbn, String nome, String autor, String editora, int ano, String isbnCode) {
+		this.isbn = isbn;
+		this.nome = nome;
+		this.autor = autor;
+		this.editora = editora;
+		this.ano = ano;
+		this.isbnCode = isbnCode;
+	}
+	
+	@WebMethod 
+	public int getIsbn() {
+		return isbn;
+	}
+	
+	@WebMethod
+	public String getNome() {
+		return nome;
+	}
+	
+	@WebMethod
+	public String getAutor() {
+		return autor;
+	}
+	
+	@WebMethod
+	public String getEditora() {
+		return editora;
+	}
+	
+	@WebMethod 
+	public int getAno() {
+		return ano;
+	}
+	
+	@WebMethod
+	public String getIsbnCode() {
+		return isbnCode;
+	}
+}

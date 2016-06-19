@@ -1,0 +1,46 @@
+package org.engsoft.webservice;
+import java.util.ArrayList;
+
+import javax.jws.WebMethod;
+import javax.jws.WebService;
+
+
+@WebService(endpointInterface="org.engsoft.webservice.ILivraria")
+public class Livraria implements ILivraria {
+
+	@WebMethod (operationName = "pesquisa")
+	public Livro pesquisa(int isbn) {
+		ArrayList<Livro> listaLivros = this.livrosServ();
+		
+		for(Livro livro : listaLivros) {
+			if (livro.getIsbn() == isbn)
+				return livro;
+		}
+		
+		return null;
+	}
+	
+	@WebMethod (operationName = "pesquisaAutor")
+	public Livro pesquisa( String autor) {
+		ArrayList<Livro> listaLivros = this.livrosServ();
+		
+		for(Livro livro : listaLivros) {
+			if (livro.getAutor().equals(autor))
+				return livro;
+		}
+		
+		return null;
+	}
+	
+	private ArrayList<Livro> livrosServ() {
+		ArrayList<Livro> listaLivros = new ArrayList<Livro>();
+		
+		listaLivros.add(new Livro(1, "O menino do pijama listrado", "John Boyne", "Boa Viagem Distribuidora de Livros LTDA", 2009, "978-85-98078-17-5"));
+		listaLivros.add(new Livro(2, "O menino do dedo verde", "Druon Maurice", "Jose Olympio", 1993, "978-85-98078-17-5"));
+		listaLivros.add(new Livro(3, "Morte e Vida Severina", "Joao Cabral de Melo Neto", "Editora Record", 1996, "978-85-98078-17-5"));
+		listaLivros.add(new Livro(4, "Dom Casmurro", "Machado de Assis", "Ediouro", 1900, "978-85-98078-17-5"));
+		listaLivros.add(new Livro(5, "A menina que roubava livros", "Markus Zusak", "Editora Intrinseca", 2007, "978-85-98078-17-5"));
+		
+		return listaLivros;
+	}
+}

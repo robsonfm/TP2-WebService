@@ -1,0 +1,39 @@
+package org.engsoft.webservice.client;  
+import java.util.Scanner;
+
+import org.engsoft.webservice.ILivraria;
+import org.engsoft.webservice.LivrariaService;
+import org.engsoft.webservice.Livro;
+  
+public class JAXWSClient {  
+   
+    public static void main(String[] args) {  
+          
+        LivrariaService LService = new LivrariaService();  
+        ILivraria IL = LService.getLivrariaPort();
+        //IL.fazLivros();
+        Livro novo;
+        Scanner leitura = new Scanner(System.in);
+        int num = 1;
+        do{
+        	try{
+        		num = leitura.nextInt();
+        		if (num > 0){
+        			novo = IL.pesquisa(num);
+                    String imprimir ="Livro\nisbn = "+novo.getIsbn()+"\nNome = "+novo.getNome()+
+                    		"\nAutor = "+novo.getAutor()+"\nEditora = "+novo.getEditora()+
+                    		"\nAno = "+novo.getAno();
+                    System.out.println(imprimir);
+        		}
+        	}catch(Exception e){
+        		String nome = leitura.nextLine();
+        		novo = IL.pesquisaAutor(nome);
+                String imprimir ="Livro\nisbn = "+novo.getIsbn()+"\nNome = "+novo.getNome()+
+                		"\nAutor = "+novo.getAutor()+"\nEditora = "+novo.getEditora()+
+                		"\nAno = "+novo.getAno();
+                System.out.println(imprimir);
+        	}
+        }while(num > 0);
+        leitura.close();
+    }  
+}

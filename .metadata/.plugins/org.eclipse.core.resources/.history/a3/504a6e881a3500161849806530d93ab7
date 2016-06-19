@@ -1,0 +1,17 @@
+package org.engsoft.webservice;
+import javax.jws.WebMethod;  
+import javax.jws.WebService;
+  
+@WebService
+public interface ILivraria {
+
+	@WebMethod (operationName = "pesquisa")
+	public Livro pesquisa(int isbn);
+	
+	@WebMethod (operationName = "pesquisaAutor")
+	public Livro pesquisa(String autor);
+	
+	@WebMethod (operationName = "Imprime")
+	public String Imprime(Livro livro);
+	
+}

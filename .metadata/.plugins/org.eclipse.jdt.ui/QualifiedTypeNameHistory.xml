@@ -2,7 +2,8 @@
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="org.engsoft.webservice.Livro"/>
-<fullyQualifiedTypeName name="javax.xml.ws.RequestWrapper"/>
-<fullyQualifiedTypeName name="javax.xml.ws.ResponseWrapper"/>
 <fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="javax.jws.WebParam"/>
+<fullyQualifiedTypeName name="javax.xml.ws.ResponseWrapper"/>
+<fullyQualifiedTypeName name="javax.xml.ws.RequestWrapper"/>
 </qualifiedTypeNameHistroy>

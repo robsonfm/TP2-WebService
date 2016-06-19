@@ -1,0 +1,20 @@
+package org.engsoft.webservice;
+import javax.jws.WebMethod;  
+import javax.jws.WebService;
+import javax.xml.ws.RequestWrapper;
+import javax.xml.ws.ResponseWrapper;
+  
+@WebService
+public interface ILivraria {
+
+	@WebMethod (operationName = "pesquisa")
+	@RequestWrapper(className = "pesquisa")
+    @ResponseWrapper(className = "pesquisa")
+	public Livro pesquisa(int isbn);
+	
+	@WebMethod (operationName = "org.engsoft.webservice.pesquisaAutor")
+	@RequestWrapper(className = "org.engsoft.webservice.pesquisaAutor")
+    @ResponseWrapper(className = "org.engsoft.webservice.pesquisaAutorResponse")
+	public Livro pesquisa(String autor);
+	
+}
